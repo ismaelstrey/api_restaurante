@@ -1,0 +1,107 @@
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+    id        String   @id @default(uuid())
+    name      String
+    email     String   @unique
+    password  String
+    role      Role     @default(CUSTOMER)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    orders    Order[]
+}
+
+model Product {
+    id          String      @id @default(uuid())
+    name        String
+    description String
+    price       Decimal
+    categoryId  String
+    category    Category    @relation(fields: [categoryId], references: [id])
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
+    OrderItem   OrderItem[]
+}
+
+model Category {
+    id        String    @id @default(uuid())
+    name      String
+    products  Product[]
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @updatedAt
+}
+
+model Order {
+    id        String      @id @default(uuid())
+    userId    String
+    user      User        @relation(fields: [userId], references: [id])
+    status    OrderStatus @default(PENDING)
+    items     OrderItem[]
+    total     Decimal
+    createdAt DateTime    @default(now())
+    updatedAt DateTime    @updatedAt
+    Payment   Payment?
+}
+
+model OrderItem {
+    id        String   @id @default(uuid())
+    orderId   String
+    order     Order    @relation(fields: [orderId], references: [id])
+    productId String
+    product   Product  @relation(fields: [productId], references: [id])
+    quantity  Int
+    price     Decimal
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model PaymentType {
+    id          String    @id @default(uuid())
+    name        String
+    description String?
+    isActive    Boolean   @default(true)
+    payments    Payment[]
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+}
+
+model Payment {
+    id            String        @id @default(uuid())
+    orderId       String        @unique
+    order         Order         @relation(fields: [orderId], references: [id])
+    amount        Decimal
+    paymentTypeId String
+    paymentType   PaymentType   @relation(fields: [paymentTypeId], references: [id])
+    status        PaymentStatus @default(PENDING)
+    createdAt     DateTime      @default(now())
+    updatedAt     DateTime      @updatedAt
+}
+
+enum Role {
+    ADMIN
+    CUSTOMER
+}
+
+enum OrderStatus {
+    PENDING
+    PREPARING
+    READY
+    DELIVERED
+    CANCELLED
+}
+
+enum PaymentStatus {
+    PENDING
+    PROCESSING
+    APPROVED
+    REJECTED
+    REFUNDED
+    CANCELLED
+}
