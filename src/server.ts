@@ -23,6 +23,6 @@ const app = new Elysia()
     .use(categoryRoutes)
     .use(paymentRoutes)
     .use(paymentTypeRoutes)
-    .listen(3000);
+    .listen(process.env.PORT || 3000);
 
-console.log('🚀 Server is running on port 3000'); 
+console.log(`🚀 Server is running on port ${process.env.PORT || 3000}`); 

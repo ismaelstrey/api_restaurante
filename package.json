@@ -1,29 +1,31 @@
 {
-  "name": "bun_solid",
-  "module": "index.ts",
+  "name": "api-restaurante",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy",
-    "dev": "bun run --watch src/server.ts",
+    "vercel-build": "npm run build && prisma generate && prisma migrate deploy",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "migrate:dev": "prisma migrate dev",
     "migrate:prod": "prisma migrate deploy",
     "db:push": "prisma db push"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/express": "^5.0.0",
-    "bun-types": "^1.1.42"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
   },
   "dependencies": {
     "@elysiajs/jwt": "^1.2.0",
     "@elysiajs/swagger": "^1.2.0",
     "@prisma/client": "^6.1.0",
     "elysia": "^1.2.10",
-    "express": "^4.21.2",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "prisma": "^5.10.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
