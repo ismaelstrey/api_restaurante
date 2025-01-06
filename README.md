@@ -1,15 +1,22 @@
-# bun_solid
+# API Restaurante
 
-To install dependencies:
+## Bancos de Dados
+- Desenvolvimento: MySQL
+- Produção: PostgreSQL
 
-```bash
-bun install
-```
+## Deploy na Vercel
 
-To run:
+1. Crie uma conta na Vercel
+2. Crie um banco PostgreSQL na Vercel
+   - Dashboard > Storage > Create Database
+   - Selecione PostgreSQL
+   - Copie a URL de conexão
+3. Instale a CLI da Vercel: `npm i -g vercel`
+4. Faça login: `vercel login`
+5. Configure as variáveis de ambiente na Vercel:
+   - DATABASE_URL (URL do PostgreSQL)
+6. Deploy: `vercel`
 
-```bash
-bun run index.ts
-```
+Para produção: `vercel --prod`
 
-This project was created using `bun init` in bun v1.1.42. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Veja mais detalhes em [docs/database.md](docs/database.md)
