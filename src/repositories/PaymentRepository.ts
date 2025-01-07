@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import type { IPayment } from '../interfaces/IPayment';
+import type { IPayment } from '../interfaces/IPayment.js';
 
 type CreatePaymentData = {
     orderId: string;

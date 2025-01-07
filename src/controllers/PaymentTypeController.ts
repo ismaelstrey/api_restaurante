@@ -1,4 +1,4 @@
-import { PaymentTypeService } from '../services/PaymentTypeService';
+import { PaymentTypeService } from '../services/PaymentTypeService.js';
 
 export class PaymentTypeController {
     private paymentTypeService: PaymentTypeService;

@@ -1,6 +1,6 @@
-import type { IProduct } from '../interfaces/IProduct';
-import { ProductRepository } from '../repositories/ProductRepository';
-import { CategoryService } from './CategoryService';
+import type { IProduct } from '../interfaces/IProduct.js';
+import { ProductRepository } from '../repositories/ProductRepository.js';
+import { CategoryService } from './CategoryService.js';
 
 export class ProductService {
     private productRepository: ProductRepository;

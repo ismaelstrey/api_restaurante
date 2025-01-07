@@ -1,5 +1,5 @@
 import { Elysia, t } from 'elysia';
-import { ProductController } from '../controllers/ProductController';
+import { ProductController } from '../controllers/ProductController.js';
 
 const productController = new ProductController();
 const productRoutes = new Elysia({ prefix: '/products' })

@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import type { IPaymentType } from '../interfaces/IPaymentType';
+import type { IPaymentType } from '../interfaces/IPaymentType.js';
 
 type CreatePaymentTypeData = Omit<IPaymentType, 'id' | 'createdAt' | 'updatedAt'>;
 

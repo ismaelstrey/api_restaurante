@@ -1,6 +1,6 @@
-import type { IPayment } from '../interfaces/IPayment';
-import { PaymentRepository } from '../repositories/PaymentRepository';
-import { OrderService } from './OrderService';
+import type { IPayment } from '../interfaces/IPayment.js';
+import { PaymentRepository } from '../repositories/PaymentRepository.js';
+import { OrderService } from './OrderService.js';
 
 export class PaymentService {
     private paymentRepository: PaymentRepository;

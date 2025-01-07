@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import type { IUser } from '../interfaces/IUser';
+import type { IUser } from '../interfaces/IUser.js';
 
 export class UserRepository {
     private prisma: PrismaClient;

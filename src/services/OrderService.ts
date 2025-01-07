@@ -1,6 +1,6 @@
-import type { IOrder, ICreateOrderItem } from '../interfaces/IOrder';
-import { OrderRepository } from '../repositories/OrderRepository';
-import { UserService } from './UserService';
+import type { IOrder, ICreateOrderItem } from '../interfaces/IOrder.js';
+import { OrderRepository } from '../repositories/OrderRepository.js';
+import { UserService } from './UserService.js';
 
 export class OrderService {
     private orderRepository: OrderRepository;

@@ -1,4 +1,4 @@
-import { IPayment } from './IPayment';
+import { IPayment } from './IPayment.js';
 
 export interface IOrder {
     id: string;

@@ -1,4 +1,5 @@
-import { ProductService } from '../services/ProductService';
+import { ProductService } from '../services/ProductService.js';
+import type { IProduct } from '../interfaces/IProduct.js';
 
 export class ProductController {
     private productService: ProductService;

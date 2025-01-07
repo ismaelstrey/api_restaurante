@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import type { IProduct } from '../interfaces/IProduct';
+import type { IProduct } from '../interfaces/IProduct.js';
 
 export class ProductRepository {
     private prisma: PrismaClient;

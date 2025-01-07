@@ -1,5 +1,5 @@
 import { Elysia, t } from 'elysia';
-import { UserController } from '../controllers/UserController';
+import { UserController } from '../controllers/UserController.js';
 
 const userController = new UserController();
 const userRoutes = new Elysia({ prefix: '/users' })

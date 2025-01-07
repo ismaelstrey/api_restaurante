@@ -1,5 +1,5 @@
 import { Elysia, t } from 'elysia';
-import { CategoryController } from '../controllers/CategoryController';
+import { CategoryController } from '../controllers/CategoryController.js';
 
 const categoryController = new CategoryController();
 const categoryRoutes = new Elysia({ prefix: '/categories' })

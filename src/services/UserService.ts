@@ -1,6 +1,6 @@
-import type { IUser } from '../interfaces/IUser';
-import { UserRepository } from '../repositories/UserRepository';
-import { hash } from '../utils/hash';
+import type { IUser } from '../interfaces/IUser.js';
+import { UserRepository } from '../repositories/UserRepository.js';
+import { hash } from '../utils/hash.js';
 
 export class UserService {
     private userRepository: UserRepository;

@@ -1,5 +1,5 @@
-import type { ICategory } from '../interfaces/ICategory';
-import { CategoryRepository } from '../repositories/CategoryRepository';
+import type { ICategory } from '../interfaces/ICategory.js';
+import { CategoryRepository } from '../repositories/CategoryRepository.js';
 
 export class CategoryService {
     private categoryRepository: CategoryRepository;

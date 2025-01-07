@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import type { ICategory } from '../interfaces/ICategory';
+import type { ICategory } from '../interfaces/ICategory.js';
 
 export class CategoryRepository {
     private prisma: PrismaClient;

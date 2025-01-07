@@ -1,4 +1,4 @@
-import { CategoryService } from '../services/CategoryService';
+import { CategoryService } from '../services/CategoryService.js';
 
 export class CategoryController {
     private categoryService: CategoryService;

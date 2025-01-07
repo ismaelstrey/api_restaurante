@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import type { IOrder, IOrderItem, ICreateOrderItem } from '../interfaces/IOrder';
+import type { IOrder, IOrderItem, ICreateOrderItem } from '../interfaces/IOrder.js';
 
 export class OrderRepository {
     private prisma: PrismaClient;

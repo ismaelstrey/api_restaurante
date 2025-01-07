@@ -1,5 +1,5 @@
-import { OrderService } from '../services/OrderService';
-import type { IOrder } from '../interfaces/IOrder';
+import { OrderService } from '../services/OrderService.js';
+import type { IOrder } from '../interfaces/IOrder.js';
 
 export class OrderController {
     private orderService: OrderService;

@@ -1,5 +1,5 @@
 import { Elysia, t } from 'elysia';
-import { PaymentTypeController } from '../controllers/PaymentTypeController';
+import { PaymentTypeController } from '../controllers/PaymentTypeController.js';
 
 const paymentTypeController = new PaymentTypeController();
 const paymentTypeRoutes = new Elysia({ prefix: '/payment-types' })
